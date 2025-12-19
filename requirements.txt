@@ -7,3 +7,4 @@ tensorflow-cpu
 yfinance
 ta
 python-multipart
+httpx
