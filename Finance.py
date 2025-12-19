@@ -279,3 +279,17 @@ plt.grid(True)
 plt.show()
 
 regression.save("model_lstm.keras")
+
+import pickle
+
+# Sauvegarde en pickle
+with open("encoder.pkl", "wb") as f:
+    pickle.dump(encoder, f)
+
+with open("cs_x.pkl", "wb") as f:
+    pickle.dump(cs_x, f)
+
+with open("cs_y.pkl", "wb") as f:
+    pickle.dump(cs_y, f)
+
+print("Artifacts sauvegardés : encoder.pkl, cs_x.pkl, cs_y.pkl")
