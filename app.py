@@ -151,7 +151,10 @@ class PredictResponse(BaseModel):
     info: Optional[str] = None
 
 
-
+@app.head("/")
+async def root_head():
+    return {}
+    
 @app.get("/")
 async def root():
     """Route racine - Accueil de l'API"""
