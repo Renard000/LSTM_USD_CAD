@@ -150,6 +150,23 @@ class PredictResponse(BaseModel):
     next_close_pred: float
     info: Optional[str] = None
 
+
+
+@app.get("/")
+async def root():
+    """Route racine - Accueil de l'API"""
+    return {
+        "message": "LSTM Finance Prediction API",
+        "version": "1.0",
+        "endpoints": {
+            "health": "/health",
+            "predict_next_day": "/predict/next_day?ticker=USDCAD=X&start=2020-01-01&end=2025-11-29",
+            "predict_history": "/predict/history?ticker=USDCAD=X&start=2020-01-01&end=2025-11-29",
+            "upload_csv": "/predict/upload_csv (POST)"
+        },
+        "docs": "/docs"
+    }
+    
 @app.get("/health")
 async def health():
     if load_error:
