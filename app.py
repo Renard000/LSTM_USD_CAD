@@ -12,8 +12,9 @@ from fastapi import FastAPI, File, UploadFile, HTTPException
 from pydantic import BaseModel
 import uvicorn
 from io import StringIO
-# Réduire le bruit TF si tu veux
-os.environ["TF_CPP_MIN_LOG_LEVEL"] = "2"
+# Réduire le bruit TF
+os.environ["TF_CPP_MIN_LOG_LEVEL"] = "3"
+os.environ["CUDA_VISIBLE_DEVICES"] = "-1"
 
 from tensorflow.keras.models import load_model
 
